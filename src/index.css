@@ -1,1 +1,19 @@
 @import "tailwindcss";
+@font-face {
+  font-family: 'Poppins-Black.ttf';
+  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 600;
+}
+
+
+@theme {
+  --color-primary: #009689;  
+  --color-secondary: #141414; 
+  --color-accent: #FFD700;    
+}
+
+[data-theme="red"] {
+  --color-primary: #e50914;  
+  --color-secondary: #000000;
+  --color-accent: #ffffff;
+}
