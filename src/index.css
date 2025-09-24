@@ -9,11 +9,20 @@
 @theme {
   --color-primary: #009689;  
   --color-secondary: #141414; 
-  --color-accent: #FFD700;    
+  --color-accent: #ffffff;
+   --color-hover: #00786f;
+  --color-muted: #777777;
+  --text-secondary: #a3a3a3;
+  --border-color: #e5e7eb;    
 }
 
 [data-theme="red"] {
   --color-primary: #e50914;  
+ 
   --color-secondary: #000000;
   --color-accent: #ffffff;
+   --color-hover: #c10007;
+  --color-muted: #777777;
+  --text-secondary: #a3a3a3;
+  --border-color: #e5e7eb;
 }

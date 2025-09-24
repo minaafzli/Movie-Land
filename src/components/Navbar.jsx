@@ -1,30 +1,37 @@
-import { useState  } from 'react'
+import { useState  , useRef} from 'react'
 import logo from '../image/logo.png'
+import useClickOutside from '../hooks/useClickOutside';
+import Button from './Button';
+import Button_filled from './Button_filled';
+
 
 function Navbar() {
    const [isOpen, setIsOpen] = useState(false)
- 
+  const  cardRef = useRef(null)
+
+ useClickOutside(cardRef , ()=>setIsOpen(false))
 
   const changeTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme)
+    setIsOpen(false)
   }
 
   return (
-    <div className="h-20 bg-gradient-to-b from-black via-black/60 via-40% to-transparent text-white flex items-center px-10 text-xl border-t-2 border-primary relative">
+    <div className="h-20 bg-gradient-to-b from-secondary via-black/60 via-40% to-transparent text-white flex items-center px-10 text-xl border-t-2 border-primary relative">
       <div className="flex justify-between w-screen">
 
         <div className="flex gap-8 justify-between items-center">
           <a href="#">
-            <img src={logo} alt="movie-land-logo" />
+            <img src={logo} alt="movie-land-logo" className='w-40' />
           </a>
-          <ul className="flex gap-8">
-            <li><a href="#">Film</a></li>
-            <li><a href="#">Anime</a></li>
-            <li><a href="#">Contact us</a></li>
+          <ul className="flex gap-5">
+            <li><a href="#" className='text-lg'>Film</a></li>
+            <li><a href="#" className='text-lg'>Anime</a></li>
+            <li><a href="#" className='text-lg'>Contact us</a></li>
           </ul>
         </div>
 
-        <div className="flex gap-8 items-center justify-center">
+        <div className="flex gap-5 items-center ">
           <a href="#">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -44,9 +51,9 @@ function Navbar() {
               </svg>
             </button>
 
-            {/* choose color menue */}
+            {/* chooseColor menue */}
             {isOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-secondary border-2 border-primary rounded-lg shadow-lg text-sm ">
+              <div ref={cardRef} className="absolute right-0 mt-2 w-40 bg-secondary border-2 border-primary rounded-lg shadow-lg text-md ">
                 <ul className="flex flex-col">
                   <li>
                     <button onClick={() => changeTheme("default")} className="w-full text-left px-4 py-2 hover:bg-primary/30">
@@ -63,6 +70,11 @@ function Navbar() {
               </div>
             )}
           </div>
+          
+                <Button>Subscribe</Button>
+                <Button_filled>Sign up</Button_filled>
+              
+                 
         </div>
 
       </div>
