@@ -1,11 +1,9 @@
-function Button({children}) {
-    return (
-        <div>
-            <button className='bg-primary  py-3 px-4 rounded-lg cursor-pointer text-accent text-sm hover:bg-hover'>{children}
-            </button>
-            
-        </div>
-    )
+function Button({ children }) {
+  return (
+    <button className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition">
+      {children}
+    </button>
+  );
 }
 
-export default Button
+export default Button;

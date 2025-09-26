@@ -10,7 +10,8 @@
   --color-primary: #009689;  
   --color-secondary: #141414; 
   --color-accent: #ffffff;
-   --color-hover: #00786f;
+  --color-hover: #00786f;
+  --color-hoverSecondary:#0096896f;
   --color-muted: #777777;
   --text-secondary: #a3a3a3;
   --border-color: #e5e7eb;    
@@ -18,10 +19,10 @@
 
 [data-theme="red"] {
   --color-primary: #e50914;  
- 
   --color-secondary: #000000;
   --color-accent: #ffffff;
    --color-hover: #c10007;
+    --color-hoverSecondary:#e5091467;
   --color-muted: #777777;
   --text-secondary: #a3a3a3;
   --border-color: #e5e7eb;
