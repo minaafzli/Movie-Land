@@ -15,7 +15,7 @@
   --color-hoverSecondary:#0096896f;
   --color-muted: #777777;
   --text-secondary: #a3a3a3;
-  --border-color: #e5e7eb;    
+  --color-border: #e5e7eb;    
 }
 
 [data-theme="red"] {
@@ -27,5 +27,5 @@
     --color-hoverSecondary:#e5091467;
   --color-muted: #777777;
   --text-secondary: #a3a3a3;
-  --border-color: #e5e7eb;
+  --color-border: #a3a3a3;
 }

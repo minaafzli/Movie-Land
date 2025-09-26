@@ -6,7 +6,7 @@ import Button_filled from "./Button_filled";
 function Header() {
   return (
     <header
-      className="relative h-screen bg-center bg-cover"
+      className="relative h-screen bg-center bg-cover font-[inter]"
       style={{ backgroundImage: `url(${header_img})` }}
     >
       <div className="absolute inset-0 bg-black/60"></div>
@@ -17,7 +17,7 @@ function Header() {
 {/* main container */}
         <div className="flex-1 flex flex-col justify-center max-w-4xl mx-auto px-[30px] md:px-[100px] text-center">
           <p className="text-accent font-semibold text-3xl md:text-5xl">
-            Solaris Synchrony: a Celestial Odyssey of Hope and Harmony
+            Solaris Synchrony: a Celestial Odyssey of Hope and Harmony 
           </p>
 
           <p className="text-gray-400 text-md pt-8">
