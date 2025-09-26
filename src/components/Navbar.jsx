@@ -51,6 +51,7 @@ function Navbar() {
         </div>
 
         <div className="flex gap-5 items-center">
+          
          
           {/* profile */}
           <a href="#">
@@ -78,6 +79,11 @@ function Navbar() {
                   <li>
                     <button onClick={() => changeTheme("red")} className="w-full text-left px-4 py-2 hover:bg-primary/30">
                       Red
+                    </button>
+                  </li>
+                  <li>
+                    <button onClick={() => changeTheme("yellow")} className="w-full text-left px-4 py-2 hover:bg-primary/30">
+                      Yellow
                     </button>
                   </li>
                 </ul>
