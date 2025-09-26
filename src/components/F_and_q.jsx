@@ -6,7 +6,7 @@ function F_and_q() {
             <p className=" text-accent text-4xl">Frequently Asked Question</p>
        <p className="text-muted w-full pb-8">Check out our Frequently Asked Questions section for everything you need to know about your movie streaming experience.</p>
 
-<Question question={'What is movie land?'} answer={`movie land is not just a platform; it's your VIP pass to a universe of captivating content that transcends the ordinary. Say goodbye to the mundane and embrace the extraordinary.`} />
+<Question question={'What is movie land Q?'} answer={`movie land is not just a platform; it's your VIP pass to a universe of captivating content that transcends the ordinary. Say goodbye to the mundane and embrace the extraordinary.`} />
 <Question question={'What Devices are Compatible?'} answer={`movie land is not just a platform; it's your VIP pass to a universe of captivating content that transcends the ordinary. Say goodbye to the mundane and embrace the extraordinary.`} />
 <Question question={'Can I Download Movies for Offline Viewing'} answer={`movie land is not just a platform; it's your VIP pass to a universe of captivating content that transcends the ordinary. `
 } />

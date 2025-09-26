@@ -10,7 +10,8 @@ function Footer() {
 
         <div className="md:w-[350px] lg:w-lg text-center md:text-left">
           <img src={logo} alt="movie land-logo" className="w-50 mx-auto md:mx-0 mb-4" />
-          <p className="text-muted lg:text-xl leading-relaxed">
+          <p className="text-muted lg:text-xl 
+          leading-relaxed">
             where every frame tells a story, and every click opens the door to a world of limitless entertainment. Immerse yourself in a universe of unparalleled movie .
           </p>
         </div>

@@ -12,11 +12,11 @@ function Question({ question, answer }) {
   return (
     <div
       ref={containerRef}
-      className="bg-bgGray w-full rounded-2xl px-8 py-4 transition-all duration-300 cursor-pointer"
+      className="bg-bgGray hover:bg-hoverSecondary/50 w-full rounded-2xl px-8 py-4 transition-all duration-300 cursor-pointer font-[inter]"
       onClick={() => setIsOpen((prev) => !prev)}
     >
       <div className="flex justify-between ">
-        <p className="text-accent text-xl">{question}</p>
+        <p className="text-accent text-left text-xl">{question}</p>
         <img
           src={isOpen ? minus_icon : add_icon}
           alt="toggle-icon"

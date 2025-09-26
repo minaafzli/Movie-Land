@@ -44,20 +44,14 @@ function Navbar() {
             <img src={logo} alt="movie-land-logo" className="w-40" />
           </a>
           <ul className="hidden md:flex gap-4">
-            <li><a href="#" className="text-sm">Film</a></li>
-            <li><a href="#" className="text-sm">Anime</a></li>
-            <li><a href="#" className="text-sm">Contact us</a></li>
+            <li><a href="#" className="text-sm hover:text-muted">Film</a></li>
+            <li><a href="#" className="text-sm hover:text-muted">Anime</a></li>
+            <li><a href="#" className="text-sm hover:text-muted">Contact us</a></li>
           </ul>
         </div>
 
         <div className="flex gap-5 items-center">
-          {/* Search */}
-          {/* <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-            </svg>
-          </a> */}
-
+         
           {/* profile */}
           <a href="#">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
