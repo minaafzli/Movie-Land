@@ -9,6 +9,7 @@
 @theme {
   --color-primary: #009689;  
   --color-secondary: #141414; 
+  --color-bgGray:#242323;
   --color-accent: #ffffff;
   --color-hover: #00786f;
   --color-hoverSecondary:#0096896f;
@@ -20,6 +21,7 @@
 [data-theme="red"] {
   --color-primary: #e50914;  
   --color-secondary: #000000;
+    --color-bgGray:#242323;
   --color-accent: #ffffff;
    --color-hover: #c10007;
     --color-hoverSecondary:#e5091467;
