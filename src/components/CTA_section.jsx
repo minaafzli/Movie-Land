@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import cta_bg from '../image/CTA_bg.jpg'
 import Button from './Button'
+import { Link } from 'react-router-dom'
 
 function CTA_section() {
   const [email, setEmail] = useState('')
@@ -37,7 +38,7 @@ function CTA_section() {
               onChange={(e) => setEmail(e.target.value)} 
               className='text-accent pl-3 border border-muted bg-secondary rounded-lg'
             />
-            <Button type="submit">Subscribe</Button>
+            <Link to='Subscription'><Button type="submit">Subscribe</Button></Link>
           </form>
         </div>
       </div>

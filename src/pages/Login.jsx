@@ -1,8 +1,10 @@
+
+import logo from '../image/logo.png'
 function Login() {
   return (
-    <div className="text-center pt-20">
-      <h1 className="text-3xl text-secondary font-bold">Login Page</h1>
-    </div>
+   <div className='bg-black'>
+    <img src={logo} alt="" />
+   </div>
   );
 }
 

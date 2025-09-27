@@ -110,12 +110,12 @@ function Navbar() {
                 <Link to='Anime' className="hover:bg-hoverSecondary py-2">Anime</Link>
                 <Link to='Contact' className="hover:bg-hoverSecondary py-2">Contact us</Link>
               </ul>
-              <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
+             <Link to='Signup'> <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
                 Sign up
-              </button>
-              <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
+              </button></Link>
+              <Link to='Subscription'><button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
                 Subscription
-              </button>
+              </button></Link>
             </div>
           )}
         </div>
