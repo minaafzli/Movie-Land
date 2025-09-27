@@ -51,7 +51,7 @@ function Navbar() {
         </div>
 
         <div className="flex gap-5 items-center">
-          
+
          
           {/* profile */}
           <a href="#">
