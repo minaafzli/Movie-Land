@@ -4,6 +4,8 @@ import icon_hamburger from "../image/icon-hamburger.svg";
 import useClickOutside from "../hooks/useClickOutside";
 import Button from "./Button";
 import Button_filled from "./Button_filled";
+import { Link } from "react-router-dom";
+
 
 function Navbar() {
   const [isThemeOpen, setIsThemeOpen] = useState(false);
@@ -40,13 +42,13 @@ function Navbar() {
     <div className="h-20 bg-gradient-to-b from-secondary via-black/60 via-40% to-transparent text-white flex items-center px-6 text-xl border-t-2 border-primary relative">
       <div className="flex justify-between w-full items-center">
         <div className="flex gap-8 items-center">
-          <a href="#">
+          <Link to='/'>
             <img src={logo} alt="movie-land-logo" className="w-40" />
-          </a>
+          </Link>
           <ul className="hidden md:flex gap-4">
-            <li><a href="#" className="text-sm hover:text-muted">Film</a></li>
-            <li><a href="#" className="text-sm hover:text-muted">Anime</a></li>
-            <li><a href="#" className="text-sm hover:text-muted">Contact us</a></li>
+            <li><Link to="/film" className="text-sm hover:text-muted">Film</Link></li>
+            <li><Link to="/Anime" className="text-sm hover:text-muted">Anime</Link></li>
+            <li><Link to="/Contact" className="text-sm hover:text-muted">Contact us</Link></li>
           </ul>
         </div>
 
@@ -54,11 +56,11 @@ function Navbar() {
 
          
           {/* profile */}
-          <a href="#">
+          <Link to='/profile'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
             </svg>
-          </a>
+          </Link>
 
           {/* theme */}
           <div className="relative">
@@ -92,8 +94,8 @@ function Navbar() {
           </div>
 
           <div className="hidden md:flex gap-2">
-            <Button>Subscribe</Button>
-            <Button_filled>Sign up</Button_filled>
+          <Link to='Subscription'>  <Button>Subscribe</Button></Link>
+          <Link to='Signup'>  <Button_filled>Sign up</Button_filled> </Link>
           </div>
 
           {/* hamburger */}
@@ -104,9 +106,9 @@ function Navbar() {
           {isOpen && (
             <div ref={hamburgerRef} className="absolute top-16 right-4 w-64 md:hidden mt-3 bg-accent rounded-xl shadow-lg py-4 text-center space-y-4 ">
               <ul className="flex flex-col text-muted">
-                <a href="#" className="hover:bg-hoverSecondary py-2">Film</a>
-                <a href="#" className="hover:bg-hoverSecondary py-2">Anime</a>
-                <a href="#" className="hover:bg-hoverSecondary py-2">Contact us</a>
+                <Link to='Film' className="hover:bg-hoverSecondary py-2">Film</Link>
+                <Link to='Anime' className="hover:bg-hoverSecondary py-2">Anime</Link>
+                <Link to='Contact' className="hover:bg-hoverSecondary py-2">Contact us</Link>
               </ul>
               <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
                 Sign up
