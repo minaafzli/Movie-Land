@@ -1,9 +1,9 @@
-// src/pages/Signup.jsx
 import React from "react";
 import logo from "../image/logo.png";
 import Button from "../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import login_bg from "../image/login_bg.jpg";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -33,7 +33,7 @@ export default function Signup() {
   });
 
   const onSubmit = (data) => {
-    const safe = { username: data.username, email: data.email };
+    const safe = { username: data.username, email: data.email , password:data.password};
     localStorage.setItem("user", JSON.stringify(safe));
     localStorage.setItem("isLoggedIn", "true");
 
@@ -41,25 +41,34 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex bg-secondary h-screen justify-center items-center px-[30px] md:px-[100px]">
+    <div className="flex h-screen justify-center items-center px-[30px] md:px-[100px] min-h-screen bg-cover "
+    style={{ backgroundImage: `url(${login_bg})` }}>
+
+    <div className="absolute inset-0 bg-black/80"></div>
       <div className="w-full max-w-md">
-        <img src={logo} alt="movie land" className="mb-4" />
+      <div className="flex flex-col items-center justify-center text-center relative z-10">
+
+        <img src={logo} alt="movie land" className="mb-4 " />
         <p className="text-3xl text-accent font-bold py-2">
           Join the Cinematic Society Experience
         </p>
-        <p className="text-muted">
+        <p className="text-accent/60">
           Unlock the Gates to a World of Infinite Movie Magic with Seamless
           Registration - Your Passport to Personalized Film Adventures Awaits!
         </p>
+      </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col gap-4 pt-8"
           noValidate
           autoComplete="on"
+          
+          
         >
+          <div className="border-1 border-muted/35 rounded-lg p-8  relative z-10 bg-black/80">
           {/* username */}
-          <div>
+          <div className="pb-4">
             <label htmlFor="username" className="text-accent">
               Name <span className="text-red-500">*</span>
             </label>
@@ -80,7 +89,7 @@ export default function Signup() {
           </div>
 
           {/* email */}
-          <div>
+          <div className="pb-4">
             <label htmlFor="email" className="text-accent">
               Email <span className="text-red-500">*</span>
             </label>
@@ -122,6 +131,7 @@ export default function Signup() {
             )}
           </div>
 
+        <div className="flex flex-col items-center w-full gap-2 pt-8">
           <Button type="submit" disabled={isSubmitting}>
             Getting Started
           </Button>
@@ -133,6 +143,8 @@ export default function Signup() {
                 Sign in
               </button>
             </Link>
+          </div>
+        </div>
           </div>
         </form>
       </div>

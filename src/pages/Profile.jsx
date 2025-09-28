@@ -1,8 +1,13 @@
+import Dashboard from "../components/Dashboard"
+import Footer from "../components/Footer"
+import Navbar from "../components/Navbar"
 function Profile() {
     return (
-         <div className="text-center pt-20">
-      <h1 className="text-3xl text-secondary font-bold">profile</h1>
-    </div>
+       <div>
+        <Navbar/>
+        <Dashboard/>
+        <Footer/>
+       </div>
     )
 }
 

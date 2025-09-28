@@ -39,7 +39,7 @@ function Navbar() {
   };
 
   return (
-    <div className="h-20 bg-gradient-to-b from-secondary via-black/60 via-40% to-transparent text-white flex items-center px-6 text-xl border-t-2 border-primary relative">
+    <div className="h-16 bg-secondary/50 text-white flex items-center px-6 text-xl border-t-2 border-primary relative inser-0">
       <div className="flex justify-between w-full items-center">
         <div className="flex gap-8 items-center">
           <Link to='/'>
