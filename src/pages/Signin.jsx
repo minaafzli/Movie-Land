@@ -4,12 +4,11 @@ import Button from "../components/Button";
 import login_bg from "../image/login_bg.jpg";
 
 export default function Signin() {
-  const [username, setUsername] = useState(""); // ✅ تغییر از email به username
+  const [username, setUsername] = useState(""); 
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  // ✅ اعتبارسنجی ساده برای یوزرنیم و پسورد
   const validate = () => {
     const newErrors = {};
     if (!username) newErrors.username = "Username is required!";
@@ -45,7 +44,7 @@ export default function Signin() {
 
   return (
     <div
-      className="relative flex items-center justify-center min-h-screen bg-cover bg-center"
+      className="relative flex items-center justify-center min-h-screen bg-cover "
       style={{ backgroundImage: `url(${login_bg})` }}
     >
       <div className="absolute inset-0 bg-black/80"></div>
