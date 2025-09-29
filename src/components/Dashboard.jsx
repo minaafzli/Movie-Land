@@ -21,7 +21,7 @@ function Dashboard() {
     <div className="h-screen bg-black font-[inter] flex items-center justify-center">
       <div>
         <div className="border-primary border-2 bg-bgGray rounded-lg p-8 text-accent flex flex-col gap-4 items-center">
-          <img src={profile} alt="" className="w-10 rounded-full" />
+          <img src={profile} className="w-10 rounded-full" />
           <p>name: {user?.username}</p>
           <p>Subscription: {user?.subscription || "No subscription yet"}</p>
 
@@ -30,6 +30,9 @@ function Dashboard() {
               <Button>Buy Subscription</Button>
             </Link>
           )}
+          {user.subscription && (<Link to="/">
+              <Button>Go Home</Button>
+            </Link>)}
 
           <button
             onClick={handleLogout}

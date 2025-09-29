@@ -1,7 +1,5 @@
-import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import F_and_Q from '../components/F_and_Q'
-import CTA_section from '../components/CTA_section'
 import Tick_text from '../components/Tick_text';
 import { useNavigate } from "react-router-dom";
 
@@ -15,10 +13,10 @@ const handleBuy = (plan) => {
   if (user) {
     user.subscription = plan;
     localStorage.setItem("user", JSON.stringify(user));
-    alert("اشتراک با موفقیت خریداری شد ✅");
+    alert("Subscription Sucsess full✅");
     navigate("/profile");
   } else {
-    alert("لطفاً ابتدا وارد حساب کاربری شوید");
+    alert("Sign in First, Please!");
     navigate("/Signup");
   }
 };
@@ -26,14 +24,13 @@ const handleBuy = (plan) => {
 
   return (
    <div>
-      <Navbar/>
       <div className='bg-secondary overflow-x-hidden md:px-20 pt-10  px-[30px] font-[inter] flex flex-col items-center text-accent '>
         <div className='md:w-2xl text-center flex flex-col gap-4 py-10'>
         <p className=' text-4xl  font-bold'>Discover the Perfect Plan for You</p>
         <p className='text-muted'>Delve into our extensive array of movie subscription pricing plans, each thoughtfully designed to cater to the distinct preferences and viewing habits of our diverse customer base.</p>
         </div>
 
-      <div className='flex flex-wrap justify-center gap-6 w-full max-w-6xl'>
+      <div className='flex flex-wrap justify-center gap-6 w-full min-w-3xl'>
         <div className='bg-bgGray flex-wrap'>
           <div className='p-4 flex flex-col gap-4'>
           <p className=' text-lg font-bold'>Basic Subscription</p>
@@ -91,7 +88,6 @@ const handleBuy = (plan) => {
       </div>
       </div>
       <F_and_Q/>
-      <CTA_section/>
       <Footer/>
    </div>
   );
