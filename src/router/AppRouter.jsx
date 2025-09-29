@@ -19,7 +19,7 @@ export default function AppRouter() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/subscription" element={<Subscription />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/MovieDetails" element={<MovieDetails />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
