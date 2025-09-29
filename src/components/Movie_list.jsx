@@ -4,13 +4,15 @@ import { Link } from "react-router-dom";
 export default function MovieList() {
   const [movies, setMovies] = useState([]);
 
+// پوستر و اطلعات همه فیلم های مرتبط با کلمه سرچ شده 
   useEffect(() => {
     async function fetchMovies() {
       const res = await fetch(
-        `https://www.omdbapi.com/?s=batman&apikey=c8bca4f7`
+        `https://www.omdbapi.com/?s=barbie&apikey=c8bca4f7`
       );
       const data = await res.json();
-      setMovies(data.Search); 
+          setMovies(data.Search); 
+
     }
     fetchMovies();
   }, []);

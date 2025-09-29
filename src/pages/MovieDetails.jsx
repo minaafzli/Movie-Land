@@ -1,7 +1,17 @@
-function MovieDetails() {
+import {  useEffect } from "react";
+function MovieDetails({movie_id }) {
+  useEffect(() => {
+    async function fetchMovies() {
+      const res = await fetch(
+        `https://www.omdbapi.com/?i=${movie_id}&apikey=c8bca4f7`
+      );
+      const data = await res.json();
+      console.log(data);
+    }
+    fetchMovies();
+  },[] );
     return (
         <div className="text-center bg-amber-600 pt-20">
-      <h1 className="text-3xl text-secondary font-bold cursor-pointer">movie details</h1>
     </div>
     )
 }
