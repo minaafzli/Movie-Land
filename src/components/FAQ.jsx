@@ -13,7 +13,7 @@ function FAQ() {
             </div>
         </div>
 
-        <div className="bg-secondary flex px-[30px] flex-col md:flex-row-reverse gap-8 md:px-[100px] justify-between items-center">
+        <div className="bg-secondary  flex px-[30px] flex-col md:flex-row-reverse gap-8 md:px-[100px] justify-between items-center">
             <div>
             <img src={FandQimag2} alt="img2" />
             </div>
