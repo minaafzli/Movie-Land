@@ -7,6 +7,7 @@ import Signin from "../pages/Signin";
 import Subscription from "../pages/Subscription";
 import Search from "../pages/Search";
 import MovieDetails from "../pages/MovieDetails";
+import Player from "../pages/Player";
 import Profile from "../pages/Profile";
 
 export default function AppRouter() {
@@ -20,7 +21,7 @@ export default function AppRouter() {
         <Route path="/subscription" element={<Subscription />} />
         <Route path="/search" element={<Search />} />
         <Route path="/movieDetails/:id" element={<MovieDetails />} />
-        <Route path="/Movie" element={<Movie/>}/>
+        <Route path="/Player/:id" element={<Player />}/>
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>

@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import StarRating from "../components/StarRating";
 import Footer from "../components/Footer";
+import Button_filled from "../components/Button_filled";
 
 function Movie() {
   const { id } = useParams();
@@ -26,7 +27,7 @@ function Movie() {
     fetchMovie();
   }, [id]);
 
-  if (!movie) return <p>Loading...</p>;
+  if (!movie) return <p className="bg-secondary text-primary flex justify-center items-center text-4xl font-bold h-screen">Loading...</p>;
 
   return (
     <div
@@ -67,7 +68,10 @@ function Movie() {
               defaultRating={movie.imdbRating ? Math.round(movie.imdbRating / 2) : 0}
             />
           </div>
-        <Link to='/Movie'> <Button>Watch Movie</Button> </Link> 
+          <div className="flex gap-8 justify-center">
+        <Link to={`/Player/${movie.imdbID}`}> <Button>Watch Movie</Button> </Link> 
+        <Button_filled>Add to Favorite</Button_filled>
+          </div>
         </div>
       </div>
 
