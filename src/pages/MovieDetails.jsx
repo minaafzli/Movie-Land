@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
 import StarRating from "../components/StarRating";
-import Footer from "../components/Footer";
 import Button_filled from "../components/Button_filled";
 
 function Movie() {
@@ -75,7 +74,6 @@ function Movie() {
         </div>
       </div>
 
-      <Footer />
     </div>
   );
 }

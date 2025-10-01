@@ -17,6 +17,7 @@ const categories = {
     "tt1877830", // The Batman
     "tt0848228", // The Avengers
     "tt4633694", // Spider-Man: Into the Spider-Verse
+    
   ],
   Series: [
     "tt0903747", // Breaking Bad
