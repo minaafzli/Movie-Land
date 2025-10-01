@@ -1,11 +1,10 @@
 import { useState  , useEffect } from "react";
 import download from "../image/download.svg";
-import { useParams } from "react-router-dom";
+import FavoriteButton from "../components/FavoriteButton";
 
 export default function Player() {
   const [quality, setQuality] = useState("720");
   const [movie , setMovie] = useState()
-  const {id} = useParams()
 
 useEffect(() => {
     async function fetchMovie() {
@@ -45,8 +44,10 @@ useEffect(() => {
       download>     
        <img src={download} alt="download" />
       </a>
-      {/* <a href="/videos/Oppenheimer-480.mp4" download className="btn">📥 Download 480p</a>
-  <a href="/videos/Oppenheimer-720.mp4" download className="btn">📥 Download 720p</a> */}
+      
+
+        {/* <img src={heart} alt="heart"/> */}
+  <FavoriteButton movie={movie}/>
 
       <div >         {/* choose quality*/}
         <label htmlFor="quality" className="mr-2">Quality:</label>
