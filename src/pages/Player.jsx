@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState  , useEffect } from "react";
 import download from "../image/download.svg";
-
-
+import { useParams } from "react-router-dom";
 
 export default function Player() {
   const [quality, setQuality] = useState("720");
-  
+  const [movie , setMovie] = useState()
+  const {id} = useParams()
+
+useEffect(() => {
+    async function fetchMovie() {
+      const res = await fetch(`https://www.omdbapi.com/?i=tt4154796&apikey=c8bca4f7`); // مثلاً Avengers
+      const data = await res.json();
+      setMovie(data);
+    }
+    fetchMovie();
+  }, []);
+
+  if (!movie) return <p>Loading...</p>;
+
+  console.log(movie.Title)
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-4">
 
@@ -22,7 +35,7 @@ export default function Player() {
         {/* choose quality*/}
         <div className="flex flex-col md:flex-row justify-between items-center md:gap-80">
 
-      <h1 className="text-2xl mb-4"> Oppenheimer</h1>
+      <h1 className="text-2xl mb-4"> {movie.Title}</h1>
       
       <div className="flex gap-8 justify-center items-center">
 
@@ -32,6 +45,8 @@ export default function Player() {
       download>     
        <img src={download} alt="download" />
       </a>
+      {/* <a href="/videos/Oppenheimer-480.mp4" download className="btn">📥 Download 480p</a>
+  <a href="/videos/Oppenheimer-720.mp4" download className="btn">📥 Download 720p</a> */}
 
       <div >         {/* choose quality*/}
         <label htmlFor="quality" className="mr-2">Quality:</label>
