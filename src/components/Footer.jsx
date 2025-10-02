@@ -20,23 +20,10 @@ function Footer() {
           <ul className="text-accent space-y-2">
             <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Home</li>
             <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">F & Q</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">About</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Film</li>
+            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Subscribe</li>
+            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Profile</li>
           </ul>
 
-          <ul className="text-accent space-y-2">
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Home</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">F & Q</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Anime</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Film</li>
-          </ul>
-
-          <ul className="text-accent space-y-2">
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Anime</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Film</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Contact </li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Anime</li>
-          </ul>
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <p className="text-accent mb-4 whitespace-nowrap">Stay up to date</p>
           <div className="flex gap-4">
