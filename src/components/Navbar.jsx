@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import logo from "../image/logo.png";
 import icon_hamburger from "../image/icon-hamburger.svg";
+// import search_icon from "../image/search_icon.svg";
+import theme_icon from "../image/theme_icon.svg";
+import profile_icon from "../image/profile_icon.svg";
 import useClickOutside from "../hooks/useClickOutside";
 import Button from "./Button";
 import Button_filled from "./Button_filled";
@@ -39,38 +42,34 @@ const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
     });
   };
 
+ 
+
   return (
     <div className="h-16 bg-secondary/50 text-white flex items-center px-6 text-xl border-t-2 border-primary relative inser-0">
       <div className="flex justify-between w-full items-center">
-        <div className="flex gap-8 items-center">
+        <div className="flex gap-4 items-center">
           <Link to='/'>
-            <img src={logo} alt="movie-land-logo" className="w-40" />
+            <img src={logo} alt="movie-land-logo" className="w-40"/>
           </Link>
-          <ul className="hidden md:flex gap-4">
-            <li><Link to="/film" className="text-sm hover:text-muted">Film</Link></li>
-            <li><Link to="/Anime" className="text-sm hover:text-muted">Anime</Link></li>
-            <li><Link to="/Contact" className="text-sm hover:text-muted">Contact us</Link></li>
-          </ul>
+         
+          {/* <img src={search_/icon} alt="search" className="cursor-pointer" /> */}
+           
         </div>
 
-        <div className="flex gap-5 items-center">
 
-         
-         
-
+        <div className="flex md:gap-5 gap-2 items-center">
+        
           {/* theme */}
-          <div className="relative">
+          <div className="relative flex items-center">
             <button ref={themeButtonRef} onClick={toggleThemeMenu}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7 cursor-pointer">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
-              </svg>
+            <img src={theme_icon} className="cursor-pointer block align-middle "/>
             </button>
 
             {isThemeOpen && (
-              <div ref={themeMenuRef} className="absolute right-0 mt-2 w-40 bg-secondary border-2 border-primary rounded-lg shadow-lg text-md">
+              <div ref={themeMenuRef} className="absolute right-0 top-10 w-40 bg-secondary border-2 border-primary rounded-lg shadow-lg text-md">
                 <ul className="flex flex-col">
                   <li>
-                    <button onClick={() => changeTheme("default")} className="w-full text-left px-4 py-2 hover:bg-primary/30">
+                    <button onClick={() => changeTheme("default")} className="w-full text-left px-4 py-2 hover:bg-primary/30 ">
                       Default
                     </button>
                   </li>
@@ -90,14 +89,12 @@ const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
           </div>
 
           {isLoggedIn ? (
-         
-          <Link to='/profile'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-7">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-            </svg>
+            
+            <Link to='/profile'>
+            <img src={profile_icon} className="cursor-pointer md:block align-middle hidden "/>
           </Link>
         ) : (
-          <div className="hidden md:flex gap-2">
+          <div className="hidden md:flex gap-2  justify-center items-center">
             <Link to="/Subscription">
               <Button>Subscribe</Button>
             </Link>
@@ -114,18 +111,32 @@ const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
           </button>
 
           {isOpen && (
-            <div ref={hamburgerRef} className="absolute top-16 right-4 w-64 md:hidden mt-3 bg-accent rounded-xl shadow-lg py-4 text-center space-y-4 ">
-              <ul className="flex flex-col text-muted">
-                <Link to='Film' className="hover:bg-hoverSecondary py-2">Film</Link>
-                <Link to='Anime' className="hover:bg-hoverSecondary py-2">Anime</Link>
-                <Link to='Contact' className="hover:bg-hoverSecondary py-2">Contact us</Link>
-              </ul>
-             <Link to='Signup'> <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
+            <div ref={hamburgerRef} className="absolute top-12 right-4 w-64 md:hidden mt-3 bg-accent rounded-xl shadow-lg py-4 text-center space-y-2">
+             <div className="flex flex-col gap-2">
+
+             <Link to='Contact' className="hover:bg-hoverSecondary/30 py-2 text-muted">
+             Contact us
+             </Link>
+
+             {isLoggedIn &&  <Link to='/Profile' className="hover:bg-hoverSecondary/30 py-2 text-muted cursor-pointer">
+             Profile
+              </Link> }
+
+             {!isLoggedIn &&
+             <Link to='Signup'>
+              <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
                 Sign up
-              </button></Link>
-              <Link to='Subscription'><button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary">
+              </button>
+              </Link>
+             }
+
+              <Link to='Subscription'>
+              <button className="rounded-full px-6 py-1 text-lg text-secondary uppercase bg-hoverSecondary hover:bg-primary cursor-pointer">
                 Subscription
-              </button></Link>
+              </button>
+              </Link>
+
+             </div>
             </div>
           )}
         </div>

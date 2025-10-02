@@ -12,39 +12,53 @@
   -ms-overflow-style: none; 
   scrollbar-width: none; 
 }
+/* ::selection{
+  background: #245e5957;
+} */
+
 
 @theme {
   --color-primary: #009689;  
+  --color-selection: #245e5957;  
   --color-secondary: #141414; 
   --color-bgGray:#242323;
   --color-accent: #ffffff;
   --color-hover: #00786f;
   --color-hoverSecondary:#0096896f;
   --color-muted: #777777;
-  --text-secondary: #a3a3a3;
-  --color-border: #e5e7eb;    
+  --color-border: #a3a3a3;    
 }
 
 [data-theme="red"] {
   --color-primary: #e50914;  
+  --color-selection: #81545779;  
   --color-secondary: #000000;
     --color-bgGray:#242323;
   --color-accent: #ffffff;
    --color-hover: #c10007;
     --color-hoverSecondary:#e5091467;
   --color-muted: #777777;
-  --text-secondary: #a3a3a3;
   --color-border: #a3a3a3;
 }
 
 [data-theme="yellow"] {
   --color-primary: #f0b100;  
+  --color-selection: #675a3850;  
   --color-secondary: #000000;
     --color-bgGray:#242323;
   --color-accent: #ffffff;
    --color-hover: #d08700;
-    --color-hoverSecondary:#d087008d;
+    --color-hoverSecondary:#d087009d;
   --color-muted: #777777;
-  --text-secondary: #a3a3a3;
   --color-border: #a3a3a3;
+
+ 
+
+}
+
+::selection{
+  background: var(--color-selection) ;
+}
+ * {
+	scrollbar-width: thin;
 }
