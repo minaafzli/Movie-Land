@@ -31,7 +31,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative w-100 mx-auto mt-10 text-accent z-[9999]">
+    <div className="relative w-100 mx-auto mt-10 text-accent z-[20]">
       <div className="flex items-center relative">
         <input
           type="text"
