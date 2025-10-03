@@ -2,9 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import login_bg from "../image/login_bg.jpg";
+import { logoutUser } from "../utils/authUtils";
 
 export default function Signin() {
-  const [username, setUsername] = useState(""); 
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
@@ -36,6 +37,19 @@ export default function Signin() {
     }
 
     if (savedUser.username === username && savedUser.password === password) {
+      // پاک کردن اطلاعات قبلی و ورود مجدد
+      logoutUser();
+      
+      // ثبت وضعیت login
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("user", JSON.stringify({
+        username: savedUser.username,
+        email: savedUser.email,
+      }));
+      
+      // ایجاد لیست خالی برای favorites
+      localStorage.setItem("favorites", JSON.stringify([]));
+      
       navigate("/profile");
     } else {
       setErrors({ general: "Username or password is incorrect! ❌" });
@@ -44,7 +58,7 @@ export default function Signin() {
 
   return (
     <div
-      className="relative flex items-center justify-center min-h-screen bg-cover "
+      className="relative flex items-center justify-center min-h-screen bg-cover"
       style={{ backgroundImage: `url(${login_bg})` }}
     >
       <div className="absolute inset-0 bg-black/80"></div>
@@ -61,7 +75,6 @@ export default function Signin() {
           <p className="text-red-500 text-center mb-3">{errors.general}</p>
         )}
 
-        {/* 🧑‍💻 Username */}
         <div className="mb-5">
           <label className="block mb-2 font-medium text-accent">
             Username<span className="text-red-500">*</span>
@@ -80,7 +93,6 @@ export default function Signin() {
           )}
         </div>
 
-        {/* 🔐 Password */}
         <div className="mb-5">
           <label className="block mb-2 font-medium text-accent">
             Password<span className="text-red-500">*</span>
@@ -100,9 +112,9 @@ export default function Signin() {
         </div>
 
         <div className="flex flex-col items-center w-full gap-2">
-          <Button>Sign in</Button>
+          <Button type="submit">Sign in</Button>
           <div className="flex gap-2">
-            <p className="text-accent">Don’t have an account?</p>
+            <p className="text-accent">Don't have an account?</p>
             <span
               className="text-primary hover:text-hover cursor-pointer"
               onClick={() => navigate("/signup")}

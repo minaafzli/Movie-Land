@@ -133,14 +133,7 @@ function Navbar() {
               className="absolute top-16 right-4 w-64 md:hidden bg-accent rounded-xl shadow-lg py-4 text-center space-y-2 z-50"
             >
               <div className="flex flex-col gap-2">
-                <Link
-                  to="/Contact"
-                  className="hover:bg-hoverSecondary/30 py-2 text-muted"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Contact us
-                </Link>
-
+               
                 {isLoggedIn && (
                   <Link
                     to="/Profile"

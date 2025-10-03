@@ -1,49 +1,61 @@
-import { Link, useNavigate } from "react-router-dom";
-import profile from "../image/Profile.jpg";
-import Button from "./Button";
+import { useNavigate } from "react-router-dom";
+import { getUserData, logoutUser, getFavorites } from "../utils/authUtils";
 
-function Dashboard() {
+export default function Dashboard() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem("user"));
-
-  if (!user) {
-    navigate("/Signup");
-    return null;
-  }
+  const userData = getUserData();
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
-    localStorage.setItem("isLoggedIn", "false");
-    navigate("/");
+    if (window.confirm("Are you sure you want to logout?")) {
+      logoutUser();
+      navigate("/");
+    }
   };
 
   return (
-    <div className="h-screen bg-black font-[inter] flex items-center justify-center">
-      <div>
-        <div className="border-primary border-2 bg-bgGray rounded-lg p-8 text-accent flex flex-col gap-4 items-center">
-          <img src={profile} className="w-10 rounded-full" />
-          <p>name: {user?.username}</p>
-          <p>Subscription: {user?.subscription || "No subscription yet"}</p>
+    <div className="bg-bgGray rounded-lg p-6 mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <h2 className="text-2xl font-bold text-accent mb-2">
+            Welcome back, {userData.username}!
+          </h2>
+          <p className="text-gray-400">{userData.email}</p>
+        </div>
 
-          {!user?.subscription && (
-            <Link to="/Subscription">
-              <Button>Buy Subscription</Button>
-            </Link>
-          )}
-          {user.subscription && (<Link to="/">
-              <Button>Go Home</Button>
-            </Link>)}
-
-          <button
-            onClick={handleLogout}
-            className="bg-red-500 rounded-lg p-3 hover:bg-red-600 cursor-pointer"
+        <button
+          onClick={handleLogout}
+          className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
+        >
+          <svg
+            className="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
           >
-            Log out
-          </button>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+            />
+          </svg>
+          Logout
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+        <div className="bg-secondary p-4 rounded-lg">
+          <h3 className="text-gray-400 text-sm mb-1">Favorite Movies</h3>
+          <p className="text-2xl font-bold text-accent">
+            {getFavorites().length}
+          </p>
+        </div>
+
+        <div className="bg-secondary p-4 rounded-lg">
+          <h3 className="text-gray-400 text-sm mb-1">Account Status</h3>
+          <p className="text-lg font-bold text-green-500">Active</p>
         </div>
       </div>
     </div>
   );
 }
-
-export default Dashboard;
