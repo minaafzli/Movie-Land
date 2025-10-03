@@ -1,16 +1,63 @@
-# React + Vite
+#  Movie land - Movie Streaming Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured movie streaming web application built with **React.js** and modern frontend technologies.  
+MovieLand allows users to explore, search, filter, and watch movies online, manage their profile, save favorites, and even subscribe for premium content — all in a smooth and responsive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Features
 
-## React Compiler
+ Search & Filter  
+- Real-time movie search with live suggestions  
+- Search results update dynamically as the user types  
+- Advanced filtering for more accurate results
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ User Authentication  
+- Sign-in / Sign-up system  
+- Personalized user profile with editable details  
+- Secure login state management
 
-## Expanding the ESLint configuration
+ Favorites & User Library  
+- Add and remove movies from your favorites list  
+- Access and manage your personal movie collection from your profile
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ Subscription System  
+- Multiple subscription plans with different access levels  
+- Dynamic UI changes based on user’s subscription status
+
+ Movie Streaming  
+- Online streaming with **multiple video quality options** (e.g.,360p, 480p, 720p)  
+- Fullscreen and responsive video player  
+- Download option for offline viewing
+
+ Responsive UI  
+- Adaptive design for desktop, tablet, and mobile  
+- Smooth carousel and card layout with auto-scroll functionality  
+- Clean and modern design using **Tailwind CSS**
+
+---
+
+ Tech Stack
+
+- React.js – Core framework  
+- React Router – Client-side routing  
+- Tailwind CSS – Responsive styling  
+- OMDb API – Movie data fetching  
+- Vite – Development and build tool
+
+---
+
+ Installation & Setup
+
+```bash
+# Clone this repository
+git clone https://github.com/yourusername/Movie-land.git
+
+# Navigate to the project folder
+cd movie_land
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
