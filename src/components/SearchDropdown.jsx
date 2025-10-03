@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 
 export default function SearchDropdown({ results = [], loading }) {
-  return (
-    <div className="absolute left-0 right-0 mt-2 bg-bgGray border border-muted rounded-lg shadow-lg z-50 max-h-80 overflow-auto">
+
+  
+  return (<>
+    
+    <div className="absolute left-0 right-0 mt-2 m-2 bg-bgGray border border-muted rounded-lg shadow-lg z-50 max-h-80 overflow-auto">
       {loading ? (
         // skeletons
-        <div className="p-4 space-y-3">
+        <div  className="p-4 space-y-3">
           {Array.from({ length: 6 }).map((_, i) => (
             <div key={i} className="flex items-center gap-3 animate-pulse">
               <div className="w-12 h-16 bg-gray-700 rounded" />
@@ -41,5 +44,7 @@ export default function SearchDropdown({ results = [], loading }) {
         </ul>
       )}
     </div>
+  
+    </>
   );
 }

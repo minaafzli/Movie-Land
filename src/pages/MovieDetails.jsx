@@ -43,36 +43,40 @@ function Movie() {
         <Navbar />
       </div>
 
-      <div className="relative z-10 flex md:flex-row-reverse flex-col gap-16 justify-between items-center px-20 py-32">
-        <img
-          src={movie.Poster}
-          alt={movie.Title}
-          className="w-[320px] h-[480px] object-cover rounded-xl shadow-2xl"
-        />
+      <div className="relative z-10 flex md:flex-row-reverse flex-col gap-12 justify-center items-center px-8 py-16 w-full max-w-6xl mx-auto">
+  <img
+    src={movie.Poster}
+    alt={movie.Title}
+    className="w-[280px] h-[420px] object-cover rounded-xl shadow-2xl flex-shrink-0"
+  />
 
-        <div className="relative z-10 flex flex-col gap-4 max-w-xl bg-black/60 p-6 rounded-xl">
-          <h1 className="text-3xl font-bold">{movie.Title}</h1>
-          <p>Genre: {movie.Genre}</p>
-          <p>Plot: {movie.Plot}</p>
-          <p>IMDB Rating: {movie.imdbRating}</p>
-          <p>Language: {movie.Language}</p>
-          <p>Year: {movie.Year}</p>
+  <div className="relative z-10 flex flex-col gap-4 bg-black/60 p-6 rounded-xl max-w-2xl w-full break-words overflow-hidden">
+    <h1 className="text-3xl font-bold">{movie.Title}</h1>
+    <p className="text-sm">Genre: {movie.Genre}</p>
+    <p className="text-sm leading-relaxed">Plot: {movie.Plot}</p>
+    <p className="text-sm">IMDB Rating: {movie.imdbRating}</p>
+    <p className="text-sm">Language: {movie.Language}</p>
+    <p className="text-sm">Year: {movie.Year}</p>
 
-          <div className="flex gap-4 items-center">
-            <p>Rate this Movie: </p>
-            <StarRating
-              maxRating={10}
-              size={26}
-              color="#facc15"
-              defaultRating={movie.imdbRating ? Math.round(movie.imdbRating / 2) : 0}
-            />
-          </div>
-          <div className="flex gap-8 justify-center">
-        <Link to={`/Player/${movie.imdbID}`}> <Button>Watch Movie</Button> </Link> 
-        <Button_filled>Add to Favorite</Button_filled>
-          </div>
-        </div>
-      </div>
+    <div className="flex gap-4 items-center">
+      <p>Rate this Movie: </p>
+      <StarRating
+        maxRating={10}
+        size={22}
+        color="#facc15"
+        defaultRating={movie.imdbRating ? Math.round(movie.imdbRating / 2) : 0}
+      />
+    </div>
+
+    <div className="flex gap-6 justify-start mt-4">
+      <Link to={`/Player/${movie.imdbID}`}>
+        <Button>Watch Movie</Button>
+      </Link>
+      <Button_filled>Add to Favorite</Button_filled>
+    </div>
+  </div>
+</div>
+
 
     </div>
   );

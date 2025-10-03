@@ -3,6 +3,7 @@ import header_img from "../image/header.jpg";
 import Button from "./Button";
 import Button_filled from "./Button_filled";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -23,15 +24,15 @@ function Header() {
 {/* main container */}
         <div className="flex-1 flex flex-col justify-center max-w-4xl mx-auto px-[30px] md:px-[100px] text-center">
           <p className="text-accent font-semibold text-3xl md:text-5xl">
-            Solaris Synchrony: a Celestial Odyssey of Hope and Harmony 
+            Mars: a Celestial Odyssey of Hope and Harmony 
           </p>
 
           <p className="text-gray-400 text-md pt-8">
             Against the backdrop of a dying Earth, a group of scientists races to execute a daring plan to synchronize the consciousness of humanity with a new solar system.
           </p>
           <div className="flex flex-col md:flex-row gap-4 pt-8 md:items-center md:justify-center">
-            <Button>Watch trailer</Button>
-            <Button_filled>More info</Button_filled>
+           <Link to='/Player/tt4939064'> <Button>Watch Movie</Button></Link>
+           <Link to='/MovieDetails/tt4939064'> <Button_filled>More info</Button_filled></Link>
           </div>
           
         </div>

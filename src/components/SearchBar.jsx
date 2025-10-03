@@ -21,6 +21,7 @@ export default function SearchBar() {
         `https://www.omdbapi.com/?s=${value}&apikey=c8bca4f7`
       );
       const data = await res.json();
+      
       setResults(data.Search || []);
     } catch (e) {
       console.error("Search error:", e);
@@ -54,8 +55,7 @@ export default function SearchBar() {
             z-[99]
             h-100
             overflow-y-auto 
-            
-            scrolbar-thin scrollbar-thumb-red-600 scrollbar-track-transparent
+            scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent
           "
         >
           <SearchDropdown results={results} loading={loading} />

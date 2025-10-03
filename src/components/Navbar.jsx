@@ -1,7 +1,6 @@
 import { useState, useRef } from "react";
 import logo from "../image/logo.png";
 import icon_hamburger from "../image/icon-hamburger.svg";
-// import search_icon from "../image/search_icon.svg";
 import theme_icon from "../image/theme_icon.svg";
 import profile_icon from "../image/profile_icon.svg";
 import useClickOutside from "../hooks/useClickOutside";
@@ -51,11 +50,8 @@ const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
           <Link to='/'>
             <img src={logo} alt="movie-land-logo" className="w-40"/>
           </Link>
-         
-          {/* <img src={search_/icon} alt="search" className="cursor-pointer" /> */}
-           
+                   
         </div>
-
 
         <div className="flex md:gap-5 gap-2 items-center">
         

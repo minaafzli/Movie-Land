@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const categories = {
   Anime: [
-    "tt13706018", // Demon Slayer
-    "tt2560140",  // Attack on Titan
-    "tt0877057",  // Death Note
-    "tt9335498",  // Jujutsu Kaisen
-    "tt12343534", // Chainsaw Man
-    "tt0388629",  // Naruto
+    "tt13706018", 
+    "tt2560140",  
+    "tt0877057",      
+    "tt9335498",     
+    "tt12343534", 
+    "tt0388629",  
   ],
   "Top Action": [
     "tt4154796", // Avengers: Endgame
