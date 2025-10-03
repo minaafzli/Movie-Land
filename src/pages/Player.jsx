@@ -1,5 +1,6 @@
 import { useState  , useEffect } from "react";
 import DownloadButton from "../components/DownloadButton";
+import Navbar from "../components/Navbar";
 import FavoriteButton from "../components/FavoriteButton";
 import { useParams } from "react-router-dom";
 
@@ -19,9 +20,9 @@ useEffect(() => {
 
   if (!movie) return <p>Loading...</p>;
 
-  return (
+  return (<div>
+        <Navbar/>
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white p-4">
-
       {/* player*/}
       <video
         key={quality} // reload video when quality changes
@@ -34,12 +35,12 @@ useEffect(() => {
 
 
         {/* choose quality*/}
-        <div className="flex flex-col bg-primary/30 mt-4 px-4 py-2 rounded-2xl  md:flex-row justify-center items-center md:gap-80">
+        <div className="flex flex-col bg-muted mt-4 px-4 py-2 rounded-2xl  md:flex-row justify-center items-center md:gap-80">
 
       <h1 className="text-2xl mb-4 md:mb-0 "> {movie.Title}</h1>
       
       <div className="flex gap-8 justify-center items-center">
-        
+
       <DownloadButton/>
       <FavoriteButton movie={movie}/>
 
@@ -49,7 +50,7 @@ useEffect(() => {
           id="quality"
           value={quality}
           onChange={(e) => setQuality(e.target.value)}
-          className="bg-muted p-2 rounded cursor-pointer"
+          className="bg-bgGray p-2 rounded cursor-pointer"
           >
           <option value="360">360p</option>
           <option value="480">480p</option>
@@ -58,6 +59,7 @@ useEffect(() => {
             </div>
           </div>
         </div>
+    </div>
     </div>
   );
 }
