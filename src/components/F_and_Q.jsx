@@ -1,6 +1,6 @@
 import Question from "./Question"
 
-function F_and_q() {
+function F_and_Q() {
     return (
         <div className="flex flex-col gap-6 bg-secondary  items-center text-center px-[30px] md:px-[100px] py-30">
             <p className=" text-accent text-4xl">Frequently Asked Question</p>
@@ -18,4 +18,4 @@ function F_and_q() {
     )
 }
 
-export default F_and_q
+export default F_and_Q
