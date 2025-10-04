@@ -24,15 +24,16 @@ const handleBuy = (plan) => {
 
   return (
    <div>
-      <div className='bg-secondary overflow-x-hidden md:px-20 pt-10  px-[30px] font-[inter] flex flex-col items-center text-accent '>
+      <div className='bg-secondary overflow-x-hidden md:px-20 pt-10  px-4 font-[inter] flex flex-col items-center text-accent '>
         <div className='md:w-2xl text-center flex flex-col gap-4 py-10'>
         <p className=' text-4xl  font-bold'>Discover the Perfect Plan for You</p>
         <p className='text-muted'>Delve into our extensive array of movie subscription pricing plans, each thoughtfully designed to cater to the distinct preferences and viewing habits of our diverse customer base.</p>
         </div>
 
       <div className='flex flex-wrap justify-center gap-6 w-full min-w-3xl'>
-        <div className='bg-bgGray flex-wrap'>
-          <div className='p-4 flex flex-col gap-4'>
+        <div className='bg-bgGray w-screen md:w-auto'>
+
+          <div className='p-4   flex flex-col gap-4'>
           <p className=' text-lg font-bold'>Basic Subscription</p>
           <div className='flex gap-4 items-center '><p className=' text-3xl font-bold'> $9.99 </p>
              <span className='text-sm '>/Montly</span>
@@ -48,9 +49,10 @@ const handleBuy = (plan) => {
               </button>       
 
           </div>
+
         </div>
-        <div className='bg-bgGray flex-wrap'>
-          <div className='p-4 flex flex-col gap-4'>
+        <div className='bg-bgGray  w-screen md:w-auto'>
+          <div className='p-4 flex   flex-col gap-4'>
           <p className=' text-lg font-bold'>Premium Subscription</p>
           <div className='flex gap-4 items-center '><p className=' text-3xl font-bold'> $24.99 </p>
              <span className='text-sm '>/Montly</span>
@@ -67,8 +69,8 @@ const handleBuy = (plan) => {
 
           </div>
         </div>
-        <div className='bg-bgGray flex-wrap'>
-          <div className='p-4 flex flex-col gap-4'>
+        <div className='bg-bgGray w-screen md:w-auto'>
+          <div className='p-4 flex    flex-col gap-4'>
           <p className=' text-lg font-bold'>Ultimate Subscription</p>
           <div className='flex gap-4 items-center '><p className=' text-3xl font-bold'> $34.99 </p>
              <span className='text-sm '>/Montly</span>
