@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import search_icon from "../image/Search_icon.svg";
+import search_icon from "../image/search_icon.svg";
 import SearchDropdown from "./SearchDropdown";
 import useClickOutside from "../hooks/useClickOutside";
 
