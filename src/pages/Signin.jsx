@@ -37,17 +37,14 @@ export default function Signin() {
     }
 
     if (savedUser.username === username && savedUser.password === password) {
-      // پاک کردن اطلاعات قبلی و ورود مجدد
       logoutUser();
       
-      // ثبت وضعیت login
       localStorage.setItem("isLoggedIn", "true");
       localStorage.setItem("user", JSON.stringify({
         username: savedUser.username,
         email: savedUser.email,
       }));
       
-      // ایجاد لیست خالی برای favorites
       localStorage.setItem("favorites", JSON.stringify([]));
       
       navigate("/profile");

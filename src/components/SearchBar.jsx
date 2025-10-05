@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import search_icon from "../image/search_icon.svg";
-import SearchDropdown from "./SearchDropdown";
+import SearchDropdown from "../components/SearchDropdown";
 import useClickOutside from "../hooks/useClickOutside";
 
 export default function SearchBar() {
