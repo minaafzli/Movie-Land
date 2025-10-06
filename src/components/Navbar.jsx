@@ -63,7 +63,7 @@ function Navbar() {
 
         <div className="flex md:gap-5 gap-2 items-center">
 
-          <HashLink smooth to='/#footer'><p className="cursor-pointer bg-primary py-2 px-3 rounded-2xl text-accent md:block hidden" >Contact us</p></HashLink>
+          <HashLink smooth to='/#footer'><p className="cursor-pointer rounded-2xl text-accent md:block hidden" >Contact us</p></HashLink>
           
           <Link to="/"><p className="cursor-pointer text-accent hidden md:block">Home</p></Link>
 
