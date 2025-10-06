@@ -8,7 +8,7 @@ import { HashLink } from 'react-router-hash-link'
 
 function Footer() {
   return (
-    <footer className="bg-secondary px-6 md:px-20 py-10 font-[inter]">
+    <footer id='footer' className="bg-secondary px-6 md:px-20 py-10 font-[inter]">
       <div className="flex flex-col gap-12 border-b border-border pb-8 md:flex-row md:justify-between">
 
         <div className="md:w-[350px] lg:w-lg text-center md:text-left">
@@ -36,7 +36,7 @@ function Footer() {
           <div className="flex gap-4">
             <img src={facebook} alt="facebook" className="w-8 h-8 cursor-pointer" />
             <img src={instagram} alt="instagram" className="w-8 h-8 cursor-pointer" />
-            <img src={tiktok} alt="tiktok" className="w-8 h-8 cursor-pointer" />
+            <img src={tiktok} alt="tiktok" className="w-6 h-6 cursor-pointer" />
           </div>
         </div>
         </div>

@@ -7,6 +7,7 @@ import useClickOutside from "../hooks/useClickOutside";
 import Button from "./Button";
 import Button_filled from "./Button_filled";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Navbar() {
   const [isThemeOpen, setIsThemeOpen] = useState(false);
@@ -40,6 +41,16 @@ function Navbar() {
     });
   };
 
+  const handleScrollToFooter = () => {
+  const footer = document.getElementById("footer");
+  if (footer) {
+    footer.scrollIntoView({ behavior: "smooth" });
+  } else {
+    window.location.href = "/#footer";
+  }
+};
+
+
   return (
     <div className="h-16 bg-secondary/50 text-white flex items-center px-6 text-xl border-t-2 border-primary relative z-30">
       <div className="flex justify-between w-full items-center">
@@ -52,6 +63,8 @@ function Navbar() {
 
         <div className="flex md:gap-5 gap-2 items-center">
 
+          <HashLink smooth to='/#footer'><p className="cursor-pointer bg-primary py-2 px-3 rounded-2xl text-accent md:block hidden" >Contact us</p></HashLink>
+          
           <Link to="/"><p className="cursor-pointer text-accent hidden md:block">Home</p></Link>
 
           {/* Theme Menu */}
@@ -137,7 +150,9 @@ function Navbar() {
             >
               <div className="flex flex-col gap-2">
 
-                <Link to="/"><p className="cursor-pointer text-muted hover:bg-hoverSecondary/30">Home</p></Link>
+                <Link smooth to="/"><p className="cursor-pointer text-muted hover:bg-hoverSecondary/30">Home</p></Link>
+
+              
                
                 {isLoggedIn && (
                   <Link
@@ -148,6 +163,8 @@ function Navbar() {
                     Profile
                   </Link>
                 )}
+
+                  <HashLink onClick={handleScrollToFooter}><p className="cursor-pointer text-muted hover:bg-hoverSecondary/30">Contact us</p></HashLink>
 
                 {!isLoggedIn && (
                   <Link to="/Signup" onClick={() => setIsOpen(false)}>

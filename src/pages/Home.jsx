@@ -19,7 +19,10 @@ function Home() {
       <F_and_Q />
       </div>
       <CTA_section />
+
+      <div >
       <Footer />
+      </div>
     </>
   );
 }
