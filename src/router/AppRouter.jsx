@@ -8,10 +8,12 @@ import Search from "../pages/Search";
 import MovieDetails from "../pages/MovieDetails";
 import Player from "../pages/Player";
 import Profile from "../pages/Profile";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function AppRouter() {
   return (
     <Router>
+      <ScrollToTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />

@@ -4,6 +4,7 @@ import tiktok from '../image/tiktok.svg'
 import facebook from '../image/facebook.svg'
 import Subscription from '../pages/Subscription'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 function Footer() {
   return (
@@ -20,10 +21,14 @@ function Footer() {
 
         <div className="grid grid-cols-2 md:flex flex-col text-xl  sm:flex-row gap-8 justify-center md:justify-start text-center sm:text-left">
           <ul className="text-accent space-y-2">
-           <Link to="/"> <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Home</li></Link>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">F & Q</li>
+
+           <HashLink smooth to="/#header"> <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Home</li></HashLink>
+
+           <HashLink smooth to="/#faq"> <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">F & Q</li></HashLink>
+
             <Link to="/Subscription"><li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Subscribe</li></Link>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Profile</li>
+
+          <Link to ='/Profile'> <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Profile</li></Link> 
           </ul>
 
         <div className="flex flex-col items-center md:items-start text-center md:text-left">

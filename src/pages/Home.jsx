@@ -8,10 +8,16 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
+    <div id="header">
       <Header />
+    </div>
+
       <Movie_list/>
       <FAQ />
+
+      <div id="faq">
       <F_and_Q />
+      </div>
       <CTA_section />
       <Footer />
     </>
