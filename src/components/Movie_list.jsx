@@ -103,7 +103,7 @@ export default function Movie_list() {
           <div key={category} className="mb-10">
             <h2 className="text-2xl font-bold mb-4">{category}</h2>
 
-            <div className="hidden md:flex gap-4 flex-wrap">
+            <div className="hidden md:flex md:items-center md:justify-center gap-4 flex-wrap">
               {loading
                 ? Array.from({ length: 6 }).map((_, i) => (
                     <div
