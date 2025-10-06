@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const categories = {
   Anime: [
@@ -87,7 +88,7 @@ export default function Movie_list() {
   const handleManualSlide = (cat, direction) => {
     clearInterval(intervalRefs.current[cat]);
     slide(cat, direction);
-    
+
     intervalRefs.current[cat] = setInterval(() => {
       slide(cat, 1);
     }, 3000);
@@ -103,15 +104,13 @@ export default function Movie_list() {
           <div key={category} className="mb-10">
             <h2 className="text-2xl font-bold mb-4">{category}</h2>
 
+            {/* Desktop Cards */}
             <div className="hidden md:flex md:items-center md:justify-center gap-4 flex-wrap">
               {loading
                 ? Array.from({ length: 6 }).map((_, i) => (
                     <div
                       key={i}
-                      className="
-                        bg-bgGray p-2 rounded 
-                        w-[220px] h-[360px] flex flex-col animate-pulse
-                      "
+                      className="bg-bgGray p-2 rounded w-[220px] h-[360px] flex flex-col animate-pulse"
                     >
                       <div className="w-full h-[280px] bg-gray-700 rounded"></div>
                       <div className="mt-2 h-4 bg-gray-600 rounded w-3/4"></div>
@@ -119,13 +118,10 @@ export default function Movie_list() {
                     </div>
                   ))
                 : movies.map((movie) => (
-                    <a
+                    <Link
                       key={movie.imdbID}
-                      href={`/movieDetails/${movie.imdbID}`}
-                      className="
-                        bg-bgGray p-2 rounded 
-                        w-[220px] h-[360px] flex flex-col hover:scale-105 transition-transform
-                      "
+                      to={`/movieDetails/${movie.imdbID}`}
+                      className="bg-bgGray p-2 rounded w-[220px] h-[360px] flex flex-col hover:scale-105 transition-transform"
                     >
                       <div className="w-full h-[280px] overflow-hidden rounded">
                         <img
@@ -141,21 +137,31 @@ export default function Movie_list() {
                         </h3>
                         <p className="text-xs text-gray-400">{movie.Year}</p>
                       </div>
-                    </a>
+                    </Link>
                   ))}
             </div>
 
+            {/* Mobile Slider */}
             <div className="md:hidden relative w-full overflow-hidden">
               <div className="flex items-center justify-center py-4">
-                
-                {/* Previous btn */}
+                {/* Prev Button */}
                 <button
                   onClick={() => handleManualSlide(category, -1)}
                   className="absolute left-2 z-10 bg-black/70 text-white p-3 rounded-full hover:bg-black/90 transition-all shadow-lg cursor-pointer"
                   aria-label="Previous"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 19l-7-7 7-7"
+                    />
                   </svg>
                 </button>
 
@@ -168,11 +174,10 @@ export default function Movie_list() {
                     </div>
                   ) : (
                     <>
-                      {/* کارت اول - همیشه نمایش داده می‌شود */}
                       {movies.slice(index, index + 1).map((movie) => (
-                        <a
+                        <Link
                           key={movie.imdbID}
-                          href={`/movieDetails/${movie.imdbID}`}
+                          to={`/movieDetails/${movie.imdbID}`}
                           className="bg-bgGray p-2 rounded w-[220px] h-[360px] flex flex-col hover:scale-105 transition-transform flex-shrink-0"
                         >
                           <div className="w-full h-[280px] overflow-hidden rounded">
@@ -187,16 +192,17 @@ export default function Movie_list() {
                             <h3 className="text-sm font-semibold truncate">
                               {movie.Title}
                             </h3>
-                            <p className="text-xs text-gray-400">{movie.Year}</p>
+                            <p className="text-xs text-gray-400">
+                              {movie.Year}
+                            </p>
                           </div>
-                        </a>
+                        </Link>
                       ))}
 
-
                       {movies.slice(index + 1, index + 2).map((movie) => (
-                        <a
+                        <Link
                           key={movie.imdbID}
-                          href={`/movieDetails/${movie.imdbID}`}
+                          to={`/movieDetails/${movie.imdbID}`}
                           className="bg-bgGray p-2 rounded w-[220px] h-[360px] flex flex-col hover:scale-105 transition-transform flex-shrink-0 hidden min-[500px]:flex"
                         >
                           <div className="w-full h-[280px] overflow-hidden rounded">
@@ -211,27 +217,39 @@ export default function Movie_list() {
                             <h3 className="text-sm font-semibold truncate">
                               {movie.Title}
                             </h3>
-                            <p className="text-xs text-gray-400">{movie.Year}</p>
+                            <p className="text-xs text-gray-400">
+                              {movie.Year}
+                            </p>
                           </div>
-                        </a>
+                        </Link>
                       ))}
                     </>
                   )}
                 </div>
 
-                {/* next btn  */}
+                {/* Next Button */}
                 <button
                   onClick={() => handleManualSlide(category, 1)}
                   className="absolute right-2 z-10 bg-black/70 text-white p-3 rounded-full hover:bg-black/90 transition-all shadow-lg cursor-pointer"
                   aria-label="Next"
                 >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
                   </svg>
                 </button>
               </div>
 
-            
+              {/* Dots */}
               <div className="flex justify-center gap-2 mt-2">
                 {movies.map((_, i) => (
                   <button
