@@ -16,9 +16,8 @@ function Header() {
       <div className="relative z-10 flex flex-col h-full bg-gradient-to-t from-secondary via-black/30 via-10% to-transparent">
 
         <Navbar />
-        <div className="flex items-center justify-center mt-10">
 
-      
+        <div className="flex items-center justify-center mx-4 mt-20">
         <SearchBar/>
         </div>
 {/* main container */}

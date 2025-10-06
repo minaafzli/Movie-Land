@@ -78,7 +78,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto mt-10 text-accent z-[25]">
+    <div className="relative w-full max-w-2xl mx-auto  text-accent z-[25]">
       <div className="flex items-center gap-2">
         {/* Search Input */}
         <div className="flex items-center relative flex-1">
