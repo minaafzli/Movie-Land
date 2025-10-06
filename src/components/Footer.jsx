@@ -2,6 +2,8 @@ import logo from '../image/logo.png'
 import instagram from '../image/instagram.svg'
 import tiktok from '../image/tiktok.svg'
 import facebook from '../image/facebook.svg'
+import Subscription from '../pages/Subscription'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -18,9 +20,9 @@ function Footer() {
 
         <div className="grid grid-cols-2 md:flex flex-col text-xl  sm:flex-row gap-8 justify-center md:justify-start text-center sm:text-left">
           <ul className="text-accent space-y-2">
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Home</li>
+           <Link to="/"> <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Home</li></Link>
             <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">F & Q</li>
-            <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Subscribe</li>
+            <Link to="/Subscription"><li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Subscribe</li></Link>
             <li className="hover:bg-bgGray px-3 py-2 rounded-2xl cursor-pointer">Profile</li>
           </ul>
 

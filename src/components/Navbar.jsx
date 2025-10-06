@@ -47,9 +47,13 @@ function Navbar() {
           <Link to="/">
             <img src={logo} alt="movie-land-logo" className="w-40" />
           </Link>
+          
         </div>
 
         <div className="flex md:gap-5 gap-2 items-center">
+
+          <Link to="/"><p className="cursor-pointer text-accent hidden md:block">Home</p></Link>
+
           {/* Theme Menu */}
           <div className="relative flex items-center">
             <button ref={themeButtonRef} onClick={toggleThemeMenu}>
@@ -113,7 +117,6 @@ function Navbar() {
               </Link>
             </div>
           )}
-
           {/* Hamburger Menu */}
           <button
             ref={hamburgerButtonRef}
@@ -133,6 +136,8 @@ function Navbar() {
               className="absolute top-16 right-4 w-64 md:hidden bg-accent rounded-xl shadow-lg py-4 text-center space-y-2 z-50"
             >
               <div className="flex flex-col gap-2">
+
+                <Link to="/"><p className="cursor-pointer text-muted hover:bg-hoverSecondary/30">Home</p></Link>
                
                 {isLoggedIn && (
                   <Link

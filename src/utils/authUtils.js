@@ -1,5 +1,3 @@
-// src/utils/authUtils.js
-// فایل کمکی برای مدیریت احراز هویت و localStorage
 
 /**
  * ورود کاربر و ذخیره اطلاعات
@@ -45,6 +43,7 @@ export const getUserData = () => {
     username: user.username || "User",
     email: user.email || "",
     isLoggedIn: isUserLoggedIn(),
+    subscription: user.subscription ,
   };
 };
 

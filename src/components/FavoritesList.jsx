@@ -12,7 +12,6 @@ export default function FavoritesList() {
   useEffect(() => {
     loadFavorites();
 
-    // گوش دادن به تغییرات
     const handleFavoritesChange = () => {
       loadFavorites();
     };
@@ -78,9 +77,10 @@ export default function FavoritesList() {
             </div>
           </Link>
 
+          {/* close button */}
           <button
             onClick={() => handleRemove(movie.imdbID)}
-            className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg"
+            className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white p-2 rounded-full shadow-lg"
             title="Remove from favorites"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -91,7 +91,7 @@ export default function FavoritesList() {
               />
             </svg>
           </button>
-
+          {/* heart icon  */}
           <div className="absolute top-2 left-2 bg-red-600 text-white p-1.5 rounded-full">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path

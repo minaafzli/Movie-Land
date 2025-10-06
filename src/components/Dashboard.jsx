@@ -53,7 +53,7 @@ export default function Dashboard() {
 
         <div className="bg-secondary p-4 rounded-lg">
           <h3 className="text-gray-400 text-sm mb-1">Account Status</h3>
-          <p className="text-lg font-bold text-green-500">Active</p>
+          <p className="text-lg font-bold text-green-500">{userData.subscription}</p>
         </div>
       </div>
     </div>
