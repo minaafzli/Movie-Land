@@ -32,8 +32,8 @@ function Footer() {
         <div className="flex flex-col items-center  text-center md:text-left">
           <p className="text-accent mb-4 whitespace-nowrap">Stay up to date</p>
           <div className="flex gap-4 ">
-            <img src={facebook} alt="facebook" className="w-8 h-8 cursor-pointer" />
-            <img src={instagram} alt="instagram" className="w-8 h-8 cursor-pointer" />
+            <img src={facebook} alt="facebook" className="w-8 h-8 cursor-pointer hover:scale-110" />
+            <img src={instagram} alt="instagram" className="w-8 h-8 cursor-pointer hover:scale-110" />
           </div>
         </div>
         </div>

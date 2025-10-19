@@ -201,7 +201,7 @@ export default function SearchBar() {
 
       {/* Search Results Dropdown */}
       {query && (
-        <div className="absolute left-0 h-100 right-0 top-20 rounded-2xl p-4 z-[30] max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
+        <div className="absolute left-0 h-100 right-0  rounded-2xl p-4 z-[30] max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
           <SearchDropdown results={results} loading={loading} />
         </div>
       )}

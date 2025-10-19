@@ -5,7 +5,7 @@ export default function SearchDropdown({ results = [], loading }) {
   
   return (<>
     
-    <div className="absolute left-0 right-0 mt-2 m-2 bg-bgGray border border-muted rounded-lg shadow-lg z-50 max-h-80 overflow-auto">
+    <div className="absolute left-0 right-0 mt-0 mx-2 bg-bgGray border border-muted rounded-lg shadow-lg z-50 max-h-80 overflow-auto">
       {loading ? (
         // skeletons
         <div  className="p-4 space-y-3">
