@@ -2,25 +2,16 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import F_and_Q from '../components/F_and_Q'
 import Tick_text from '../components/Tick_text';
-import { useNavigate } from "react-router-dom";
+import toast from 'react-hot-toast';
+
 
 
 function Subscription() {
-  const navigate = useNavigate();
 
+  const handleSubscribe = (plan) => {
+    toast.success(`You succsessfully active  ${plan} plan`);
+  };
 
-const handleBuy = (plan) => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  if (user) {
-    user.subscription = plan;
-    localStorage.setItem("user", JSON.stringify(user));
-    alert("Subscription Sucsess full✅");
-    navigate("/profile");
-  } else {
-    alert("Sign in First, Please!");
-    navigate("/Signup");
-  }
-};
 
 
   return (
@@ -46,7 +37,7 @@ const handleBuy = (plan) => {
             <Tick_text>Download your favorite films to watch offline on your mobile devices.</Tick_text>
             <Tick_text>Experience uninterrupted movie enjoyment.</Tick_text>
           </div>
-          <button  onClick={() => handleBuy("Basic")} className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition cursor-pointer">
+          <button  onClick={() => handleSubscribe('Basic')} className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition cursor-pointer">
                Get Started
               </button>       
 
@@ -65,7 +56,7 @@ const handleBuy = (plan) => {
             <Tick_text>Download your favorite films to watch offline on your mobile devices.</Tick_text>
             <Tick_text>Experience uninterrupted movie enjoyment.</Tick_text>
           </div>
-          <button  onClick={() => handleBuy("premium")} className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition cursor-pointer">
+          <button  onClick={() => handleSubscribe('Premium')} className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition cursor-pointer">
                Get Started
               </button>
 
@@ -83,7 +74,7 @@ const handleBuy = (plan) => {
             <Tick_text>Download your favorite films to watch offline on your mobile devices.</Tick_text>
             <Tick_text>Experience uninterrupted movie enjoyment.</Tick_text>
           </div>
-           <button  onClick={() => handleBuy("ultimate")} className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition cursor-pointer">
+           <button  onClick={() => handleSubscribe('Ultimate')} className="bg-primary w-full md:w-auto py-3 px-4 rounded-lg text-accent text-sm hover:bg-hover transition cursor-pointer">
                Get Started
               </button>
 
