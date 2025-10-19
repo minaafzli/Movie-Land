@@ -1,19 +1,51 @@
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { getUserData, logoutUser, getFavorites } from "../utils/authUtils";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const userData = getUserData();
 
   const handleLogout = () => {
-    if (window.confirm("Are you sure you want to logout?")) {
-      logoutUser();
-      navigate("/");
-    }
+    toast(
+      ({ closeToast }) => (
+        <div className="flex flex-col items-center">
+          <p className="text-accent mb-3">Are you sure you want to logout?</p>
+          <div className="flex gap-3">
+            <button
+              onClick={() => {
+                logoutUser();
+                closeToast(); // toast رو می‌بنده
+                navigate("/");
+              }}
+              className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded"
+            >
+              Logout
+            </button>
+
+            <button
+              onClick={closeToast}
+              className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-1 rounded"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      ),
+      {
+        position: "top-center",
+        autoClose: false,
+        closeOnClick: false,
+        draggable: false,
+        theme: "dark",
+        icon: "⚠️",
+      }
+    );
   };
 
   return (
-    <div className="bg-bgGray rounded-lg p-6 mb-8">
+    <div className="bg-bgGray rounded-lg p-6 mb-8 relative">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h2 className="text-2xl font-bold text-accent mb-2">
@@ -53,7 +85,9 @@ export default function Dashboard() {
 
         <div className="bg-secondary p-4 rounded-lg">
           <h3 className="text-gray-400 text-sm mb-1">Account Status</h3>
-          <p className="text-lg font-bold text-green-500">{userData.subscription}</p>
+          <p className="text-lg font-bold text-green-500">
+            {userData.subscription}
+          </p>
         </div>
       </div>
     </div>

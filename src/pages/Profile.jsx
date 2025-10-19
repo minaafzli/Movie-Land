@@ -5,7 +5,7 @@ import FavoritesList from "../components/FavoritesList";
 
 function Profile() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-black min-h-screen ">
       <Navbar />
       <div className="flex flex-col items-center gap-20 py-10">
        
