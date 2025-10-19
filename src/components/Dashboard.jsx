@@ -1,47 +1,21 @@
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { getUserData, logoutUser, getFavorites } from "../utils/authUtils";
-import "react-toastify/dist/ReactToastify.css";
+import useClickOutside from "../hooks/useClickOutside";
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const userData = getUserData();
+  const [showModal, setShowModal] = useState(false);
 
+  const modalRef = useRef(null);
+  useClickOutside(modalRef, () => setShowModal(false));
+
+  
   const handleLogout = () => {
-    toast(
-      ({ closeToast }) => (
-        <div className="flex flex-col items-center">
-          <p className="text-accent mb-3">Are you sure you want to logout?</p>
-          <div className="flex gap-3">
-            <button
-              onClick={() => {
-                logoutUser();
-                closeToast(); // toast رو می‌بنده
-                navigate("/");
-              }}
-              className="bg-red-600 hover:bg-red-700 text-white px-4 py-1 rounded"
-            >
-              Logout
-            </button>
-
-            <button
-              onClick={closeToast}
-              className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-1 rounded"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      ),
-      {
-        position: "top-center",
-        autoClose: false,
-        closeOnClick: false,
-        draggable: false,
-        theme: "dark",
-        icon: "⚠️",
-      }
-    );
+    logoutUser();
+    setShowModal(false);
+    navigate("/");
   };
 
   return (
@@ -55,7 +29,7 @@ export default function Dashboard() {
         </div>
 
         <button
-          onClick={handleLogout}
+          onClick={() => setShowModal(true)}
           className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
         >
           <svg
@@ -75,6 +49,7 @@ export default function Dashboard() {
         </button>
       </div>
 
+      {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         <div className="bg-secondary p-4 rounded-lg">
           <h3 className="text-gray-400 text-sm mb-1">Favorite Movies</h3>
@@ -85,11 +60,42 @@ export default function Dashboard() {
 
         <div className="bg-secondary p-4 rounded-lg">
           <h3 className="text-gray-400 text-sm mb-1">Account Status</h3>
-          <p className="text-lg font-bold text-green-500">
+          {userData.subscription &&
+            <p className="text-lg font-bold text-green-500">
             {userData.subscription}
           </p>
+          }
+          {!userData.subscription &&
+             <p className="text-accent font-bold text-lg"> No subscription</p>
+          }
+         
         </div>
       </div>
+
+      {/* modal */}
+      {showModal && (
+        <div  className="fixed inset-0 bg-black/70 bg-opacity-60 flex items-center justify-center z-50">
+          <div ref={modalRef} className="bg-bgGray p-6 rounded-xl shadow-lg w-80 text-center">
+            <p className="text-accent text-lg mb-4">
+              Are you sure you want to logout?
+            </p>
+            <div className="flex justify-center gap-4">
+              <button
+                onClick={handleLogout}
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg"
+              >
+                Logout
+              </button>
+              <button
+                onClick={() => setShowModal(false)}
+                className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
